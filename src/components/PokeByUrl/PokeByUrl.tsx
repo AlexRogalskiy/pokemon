@@ -5,7 +5,7 @@ import { fetcher } from 'utils/request'
 import { Span } from 'components/Simple'
 import LoaderSpinner from 'components/common/LoaderSpinner'
 import LazyImage from 'components/LazyImage'
-import Slider from 'components/Slider'
+//import Slider from 'components/Slider'
 import * as S from './PokeByUrl.styled'
 
 interface Props{
@@ -16,7 +16,7 @@ const PokeByUrl: React.FC<Props> = ({ url }) => {
     data, error,
   } = useSwr<ResponseByNameAPI>(url, fetcher)
 
-  const [imgUrls, setImgUrls] = React.useState<string[]>([])
+  const [ spriteArr, setImgUrls ] = React.useState<string[]>([])
 
   React.useEffect(() => {
     if (data) {
